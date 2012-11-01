@@ -117,11 +117,10 @@ void printStat(const char *cmdLine, int status)
 
 void prompt() 
 {
-	/** BEGIN TODO */
-    char* w = &get_current_dir_name();
-    sprintf("%c",w);
-    printf(":");
-	
-	/** END TODO */	
+    #define BUFLEN 5000
+    char w[BUFLEN];
+    if (getcwd(w,BUFLEN)) {
+        printf("%s:",w);
+    }
 }
 
