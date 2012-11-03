@@ -17,7 +17,7 @@
 typedef struct {
 	int    background; /*!< 1 if the command shall be executed in the background, 0 otherwise */
 	char     *outFile; /*!< if redirection of stdout is specified, outfile points to the filename of the output file, NULL otherwise */
-	char  *parseError; /*!< points to an error message if the command line could not successfully be parsed, NULL if the parse was successful */ :
+	char  *parseError; /*!< points to an error message if the command line could not successfully be parsed, NULL if the parse was successful */ 
 	char     *cmdLine; /*!< un-tokenized commandline (with & and > if present) */
 	char       **argv; /*!< array of the command - not including &, > or outFile */
 } COMMAND;

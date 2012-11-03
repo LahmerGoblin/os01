@@ -50,8 +50,10 @@ COMMAND *parseCommandLine(char *cmdLine)
 	char** argvPos = (char**) (cmdLineCopy+ceillen); //set initial adress of argvPos cmdLineCopy+ceillen
 
 	/** BEGIN TODO: */ 
-	
-	/** <YOUR CODE> */
+        int i = -1;
+        while(i < 128 && (argvPos[i]!=NULL)) {
+            argvPos[i++] = strtok(cmdLine," ");
+        }
 	
 	/** END TODO */
        
@@ -117,7 +119,7 @@ void printStat(const char *cmdLine, int status)
 
 void prompt() 
 {
-    #define BUFLEN 5000
+#define BUFLEN 5000
     char w[BUFLEN];
     if (getcwd(w,BUFLEN)) {
         printf("%s:",w);

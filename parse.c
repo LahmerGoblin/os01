@@ -1,6 +1,5 @@
 #include "shellutils.h"
 
 int main() {
-    prompt();
-    return 0;
+    parseCommandLine("ls -a -al");
 }
