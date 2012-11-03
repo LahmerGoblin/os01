@@ -49,11 +49,12 @@ COMMAND *parseCommandLine(char *cmdLine)
         // argvPos points to the space where you can store the tokenized commandline 
 	char** argvPos = (char**) (cmdLineCopy+ceillen); //set initial adress of argvPos cmdLineCopy+ceillen
 
-	/** BEGIN TODO: */ 
-        int i = -1;
-        while(i < 128 && (argvPos[i]!=NULL)) {
+	/** BEGIN TODO: */
+        int i = 0;
+        while(argvPos[i]!=NULL) {
             argvPos[i++] = strtok(cmdLine," ");
         }
+        argvPos[i]= "\0";
 	
 	/** END TODO */
        

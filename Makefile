@@ -2,9 +2,9 @@ CC = gcc
 CFLAGS = -std=c99 -pedantic -D_XOPEN_SOURCE=600 -Wall
 
 
-all: hello prompt
+all: hello prompt parse
 	mkdir bin
-	mv hello.exe prompt.exe bin/
+	mv *.exe bin/
 
 clean: 
 	rm -rf bin/ *.exe *.o

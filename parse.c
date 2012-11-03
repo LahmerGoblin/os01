@@ -1,5 +1,7 @@
 #include "shellutils.h"
 
 int main() {
-    parseCommandLine("ls -a -al");
+//    COMMAND *cmd = parseCommandLine("ls -a -al");
+//    printf("
+    parseCommandLine("ls");
 }
