@@ -1,6 +1,7 @@
 #include "shellutils.h"
 
-int main() {
-    prompt();
-    return 0;
+int main()
+{
+	prompt();
+	return 0;
 }

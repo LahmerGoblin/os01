@@ -1,4 +1,4 @@
-#include <stdlib.h>     //ctandard ibrary for memory management and type conversion
+
 #include <string.h>     //s-functions for handling character strings and memory manipulation of array elements
 #include <limits.h>	//defines constants for minimal sizes of integer variables
 #include <stdio.h> 	//standard input/output library functions
@@ -50,11 +50,11 @@ COMMAND *parseCommandLine(char *cmdLine)
 	char** argvPos = (char**) (cmdLineCopy+ceillen); //set initial adress of argvPos cmdLineCopy+ceillen
 
 	/** BEGIN TODO: */ 
-        int i = -1;
-        while(i < 128 && (argvPos[i]!=NULL)) {
-            argvPos[i++] = strtok(cmdLine," ");
-        }
-	
+
+	for(int c = 0; (argvPos[c] = strtok(cmdLine, " \t")) != NULL; c++)
+	{
+		
+	}
 	/** END TODO */
        
 	cmd->argv = argvPos;
@@ -119,10 +119,12 @@ void printStat(const char *cmdLine, int status)
 
 void prompt() 
 {
-#define BUFLEN 5000
-    char w[BUFLEN];
-    if (getcwd(w,BUFLEN)) {
-        printf("%s:",w);
-    }
+	/** BEGIN TODO */
+	#define BUF_LEN 500000
+	char buf[BUF_LEN];
+	if(getcwd(buf, BUF_LEN))
+		printf("%s:", buf);
+	
+	/** END TODO */	
 }
 
