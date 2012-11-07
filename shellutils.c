@@ -50,9 +50,7 @@ COMMAND *parseCommandLine(char *cmdLine)
 	char** argvPos = (char**) (cmdLineCopy+ceillen); //set initial adress of argvPos cmdLineCopy+ceillen
 
 	/** BEGIN TODO: */ 
-
 	for(int c = 0; (argvPos[c] = (c == 0 ? strtok(cmdLine, " \t") : strtok(NULL, " \t"))) != NULL; c++) {}
-
 	/** END TODO */
        
 	cmd->argv = argvPos;
@@ -118,11 +116,9 @@ void printStat(const char *cmdLine, int status)
 void prompt() 
 {
 	/** BEGIN TODO */
-	#define BUF_LEN 500000
-	char buf[BUF_LEN];
-	if(getcwd(buf, BUF_LEN))
+	char buf[5000000];
+	if(getcwd(buf, sizeof(buf)))
 		printf("%s:", buf);
-	
 	/** END TODO */	
 }
 
