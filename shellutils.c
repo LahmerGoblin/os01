@@ -51,10 +51,8 @@ COMMAND *parseCommandLine(char *cmdLine)
 
 	/** BEGIN TODO: */ 
 
-	for(int c = 0; (argvPos[c] = strtok(cmdLine, " \t")) != NULL; c++)
-	{
-		
-	}
+	for(int c = 0; (argvPos[c] = (c == 0 ? strtok(cmdLine, " \t") : strtok(NULL, " \t"))) != NULL; c++) {}
+
 	/** END TODO */
        
 	cmd->argv = argvPos;
