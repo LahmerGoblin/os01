@@ -50,7 +50,7 @@ COMMAND *parseCommandLine(char *cmdLine)
 	char** argvPos = (char**) (cmdLineCopy+ceillen); //set initial adress of argvPos cmdLineCopy+ceillen
 
 	/** BEGIN TODO: */ 
-	for(int c = 0; (argvPos[c] = (c == 0 ? strtok(cmdLine, " \t") : strtok(NULL, " \t"))) != NULL; c++) {}
+	for(; (argvPos[argc] = (argc == 0 ? strtok(cmdLine, " \t") : strtok(NULL, " \t"))) != NULL; argc++);
 	/** END TODO */
        
 	cmd->argv = argvPos;
