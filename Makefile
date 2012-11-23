@@ -1,6 +1,8 @@
 CC = gcc
 CFLAGS = -std=c99 -pedantic -D_XOPEN_SOURCE=600 -Wall
 
+run:
+	./bin/parse.exe
 
 all: hello prompt parse
 	mkdir bin
