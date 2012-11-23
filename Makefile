@@ -4,7 +4,7 @@ CFLAGS = -std=c99 -pedantic -D_XOPEN_SOURCE=600 -Wall
 
 all: hello prompt parse
 	mkdir bin
-	mv *.exe bin/
+	mv hello.exe prompt.exe parse.exe bin/
 
 clean: 
 	rm -rf bin/ *.exe *.o
